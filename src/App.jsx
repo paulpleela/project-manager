@@ -1,11 +1,13 @@
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   return (
     <>
-      <h1 className="text-xl font-bold text-red-500">Hello</h1>
+      <Header />
+      
     </>
-  )
+  );
 }
 
 export default App
