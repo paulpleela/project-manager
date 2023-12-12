@@ -14,7 +14,7 @@ export default function Header() {
         </button>
       </div>
       <div className="flex-1">
-        <a className="btn text-gray-800 btn-ghost text-xl">Placeholder Project</a>
+        <a className="font-medium px-3 text-gray-800 text-xl">Placeholder Project</a>
       </div>
       <div className="dropdown dropdown-end">
         <div
