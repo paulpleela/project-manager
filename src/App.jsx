@@ -1,13 +1,12 @@
-import './App.css'
-import Header from './components/Header'
+import "./App.css";
+import Project from "./pages/Project";
 
 function App() {
   return (
     <>
-      <Header />
-      
+      <Project />
     </>
   );
 }
 
-export default App
+export default App;
