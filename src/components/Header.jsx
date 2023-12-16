@@ -14,7 +14,9 @@ export default function Header() {
         </button>
       </div>
       <div className="flex-1">
-        <span className="font-medium px-2 text-gray-800 text-xl">Placeholder Project</span>
+        <span className="font-medium px-2 text-gray-800 text-xl">
+          Placeholder Project
+        </span>
       </div>
       <div className="dropdown dropdown-end">
         <div
@@ -29,23 +31,9 @@ export default function Header() {
             />
           </div>
         </div>
-        <ul
-          tabIndex={0}
-          className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <a className="justify-between">
-              Profile
-              <span className="badge">New</span>
-            </a>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-          <li>
-            <a>Logout</a>
-          </li>
-        </ul>
+        <a className="z-[1] mt-1 p-1 menu menu-sm dropdown-content bg-indigo-600 rounded-full font-semibold text-white w-28 h-9 text-base text-center cursor-pointer hover:bg-indigo-700 hover:font-bold">
+          Sign out
+        </a>
       </div>
     </header>
   );
