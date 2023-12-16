@@ -2,7 +2,7 @@ import Card from "./Card";
 
 export default function List() {
   return (
-      <div className="bg-stone-200 shadow-lg h-5/6 w-80 shrink-0 ml-4 my-7 px-2 rounded-lg overflow-auto no-scrollbar">
+      <div className="bg-stone-200 shadow-lg h-auto w-80 shrink-0 ml-4 my-7 px-2 rounded-lg overflow-auto no-scrollbar">
         <div className="text-lg font-bold bg-stone-200 sticky top-0 w-full p-1">Example List Title</div>
         <Card />
         <Card />

@@ -4,9 +4,9 @@ import Chat from "../components/Chat";
 
 export default function Project() {
   return (
-    <div className="bg-gradient-to-r from-indigo-500 to-teal-100 h-screen overflow-hidden">
+    <div className="bg-gradient-to-r from-indigo-500 to-teal-100 h-100">
       <Header />
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <Board />
         <Chat />
       </div>

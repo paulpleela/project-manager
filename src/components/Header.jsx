@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="navbar bg-white">
+    <header className="max-h-16 fixed navbar bg-white sticky top-0 z-[1]">
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg
