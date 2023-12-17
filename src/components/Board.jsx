@@ -2,8 +2,7 @@ import List from "./List";
 
 export default function Board() {
   return (
-    <div className="flex h-[calc(100vh-4rem)] overflow-x-auto no-scrollbar">
-      <List />
+    <div className="flex max-h-[calc(100vh-4rem)] overflow-x-auto no-scrollbar xl:w-3/4">
       <List />
       <List />
       <List />

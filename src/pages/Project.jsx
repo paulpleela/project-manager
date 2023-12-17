@@ -6,7 +6,7 @@ export default function Project() {
   return (
     <div className="bg-gradient-to-r from-indigo-500 to-teal-100 h-100">
       <Header />
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col xl:flex-row">
         <Board />
         <Chat />
       </div>
