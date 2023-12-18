@@ -7,7 +7,7 @@ export default function Chat() {
 
   return (
     <div className="bg-stone-100 h-[calc(100vh-4rem)] xl:w-1/4 overflow-y-auto no-scrollbar">
-      <div className="flex bg-indigo-100 w-10/12 max-w-[250px] my-2 p-1 w-56 rounded-full place-content-around sticky top-2 mx-auto">
+      <div className="flex bg-indigo-100 w-11/12 max-w-[250px] my-2 p-1 w-56 rounded-full place-content-around sticky top-2 mx-auto">
         <div>
           <input
             type="radio"
@@ -44,6 +44,11 @@ export default function Chat() {
               document.getElementById("messageInput").scrollIntoView({
                 behavior: "smooth",
               });
+              setTimeout(() => {
+                document.getElementById("chatBottom").scrollIntoView({
+                  behavior: "auto",
+                });
+              }, 10);
             }}
           />
           <label

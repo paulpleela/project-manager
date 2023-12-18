@@ -1,7 +1,31 @@
 export default function Messages() {
   return (
     <>
-      <div className="h-[calc(100vh-12rem)]"></div>
+      <div className="flex flex-col overflow-y-auto no-scrollbar h-[calc(100vh-12rem)] mx-2">
+        <div className="chat chat-start">
+          <div className="chat-image avatar">
+            <div className="w-7 rounded-full">
+              <img
+                alt="Tailwind CSS chat bubble component"
+                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+          <div className="chat-header pl-2">
+            Obi-Wan Kenobi
+          </div>
+          <div className="chat-bubble bg-white">You were the Chosen One!</div>
+          <time className="chat-footer text-xs opacity-50">12:45</time>
+        </div>
+
+        <div className="chat chat-end">
+          <div className="chat-bubble bg-white">I hate you!</div>
+          <time className="chat-footer text-xs opacity-50">12:46</time>
+        </div>
+
+        <div id="chatBottom"></div>
+        
+      </div>
       <div className="flex bg-white rounded-full h-10 p-1 m-4 items-center place-content-between">
         <svg
           xmlns="http://www.w3.org/2000/svg"
