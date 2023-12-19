@@ -25,7 +25,7 @@ export default function Chat() {
           />
           <label
             htmlFor="Members"
-            className="block text-indigo-500 font-bold cursor-pointer select-none rounded-full py-1 px-5 text-center peer-checked:bg-indigo-500 peer-checked:text-indigo-100 transition-transform transform hover:scale-110"
+            className="block text-indigo-500 font-bold cursor-pointer select-none rounded-full py-1 px-4 text-center peer-checked:bg-indigo-500 peer-checked:text-indigo-100 transition-transform transform hover:scale-110"
           >
             Members
           </label>
@@ -53,7 +53,7 @@ export default function Chat() {
           />
           <label
             htmlFor="Messages"
-            className="block text-indigo-500 font-bold cursor-pointer select-none rounded-full py-1 px-5 text-center peer-checked:bg-indigo-500 peer-checked:text-indigo-100 transition-transform transform hover:scale-110"
+            className="block text-indigo-500 font-bold cursor-pointer select-none rounded-full py-1 px-4 text-center peer-checked:bg-indigo-500 peer-checked:text-indigo-100 transition-transform transform hover:scale-110"
           >
             Messages
           </label>
