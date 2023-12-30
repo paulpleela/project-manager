@@ -67,7 +67,7 @@ export default function Board() {
           const cards = list.cards.map((card_id) => state.cards[card_id]);
           return <List key={list.id} list={list} cards={cards} />;
         })}
-        <div className="flex items-center justify-center text-4xl text-center font-bold text-stone-600 bg-stone-200 shadow-lg h-auto w-14 shrink-0 ml-4 my-7 px-2 rounded-lg overflow-auto no-scrollbar mr-2">
+        <div className="flex items-center justify-center text-4xl text-center font-bold text-stone-600 bg-stone-200 shadow-lg h-auto w-14 shrink-0 ml-3 my-7 px-2 rounded-lg overflow-auto no-scrollbar mr-2">
           +
         </div>
       </div>
