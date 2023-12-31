@@ -1,6 +1,5 @@
-import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../utils/AuthUtils";
+import { auth } from "../utils/Auth";
 
 export default function Header() {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Board from "../components/Board";
 import Chat from "../components/Chat";
 import { useParams } from "react-router-dom";
-import { auth } from '../utils/AuthUtils';
+import { auth } from '../utils/Auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 export default function Project() {
