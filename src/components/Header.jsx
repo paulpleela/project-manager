@@ -1,6 +1,21 @@
+import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../utils/AuthUtils";
+
 export default function Header() {
+  const navigate = useNavigate();
+
+  const signOut = async () => {
+    try {
+      await auth.signOut();
+      navigate("/");
+    } catch (error) {
+      console.error("Error signing out:", error.message);
+    }
+  };
+
   return (
-    <header className="max-h-16 navbar bg-white sticky top-0 z-[1]">
+    <header className="max-h-16 navbar bg-white sticky top-0 z-40">
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg
@@ -31,9 +46,12 @@ export default function Header() {
             />
           </div>
         </div>
-        <a className="z-[1] mt-1 p-1 menu menu-sm dropdown-content bg-indigo-600 rounded-full font-semibold text-white w-28 h-9 text-base text-center cursor-pointer hover:bg-indigo-700 hover:font-bold">
+        <button
+          onClick={signOut}
+          className="z-50 items-center mt-1 p-1 menu menu-sm dropdown-content bg-indigo-500 rounded-full font-semibold text-white w-24 h-9 text-base text-center cursor-pointer hover:bg-indigo-600 hover:font-bold"
+        >
           Sign out
-        </a>
+        </button>
       </div>
     </header>
   );
