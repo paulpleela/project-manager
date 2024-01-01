@@ -3,57 +3,48 @@ import Header from "../components/Header";
 import Board from "../components/Board";
 import Chat from "../components/Chat";
 import { useNavigate, useParams } from "react-router-dom";
-import { auth, projects } from "../utils/Firebase";
+import { auth, db } from "../utils/Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { doc, onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from 'firebase/firestore';
 
 export default function Project() {
   const { project_id } = useParams();
   const [user] = useAuthState(auth);
-  const [projectData, setProjectData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
   const navigate = useNavigate();
+  const projectDocRef = doc(db, "projects", project_id);
 
   useEffect(() => {
-    const projectRef = doc(projects, project_id);
+    const getData = async () => {
+      try {
+        const dataObj = await getDoc(projectDocRef);
 
-    const unsubscribe = onSnapshot(projectRef, (doc) => {
-      if (doc.exists) {
-        let data = doc.data();
-        setProjectData(data);
-        setLoading(false);
-      } else {
-        console.error("Project not found");
-        setLoading(false);
+        if (dataObj.exists()) {
+          setData({ ...dataObj.data(), id: dataObj.id });
+        } else {
+          console.error("Project not found");
+          navigate("/404");
+        }
+      } catch (error) {
+        console.error(error);
       }
-    });
+    };
 
-    return () => unsubscribe();
-  }, [project_id]);
+    getData();
+  }, []);
 
-  if (loading) {
-    return <span>Loading...</span>;
-  }
-  console.log(projectData);
-
-  // const hasPermission = projectData.members.some(member => member.userId == user.uid);
-
-  // if (!hasPermission) {
-  //   return <span>No permission to access the project</span>;
-  // }
+  console.log(data);
 
   return user ? (
-    projectData ? (
+    data ? (
       <div className="bg-gradient-to-r from-indigo-500 to-teal-100 h-100">
-        <Header title={projectData.title} photo={null}/>
+        <Header title={data.title} photo={null}/>
         <div className="flex flex-col xl:flex-row">
           <Board />
-          <Chat data={projectData} />
+          <Chat data={data} />
         </div>
       </div>
-    ) : (
-      navigate("/404")
-    )
+    ) : <span>Loading...</span>
   ) : (
     <span>Not logged in</span>
   );

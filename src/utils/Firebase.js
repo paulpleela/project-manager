@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore"
 
 const app = initializeApp({
     apiKey: "AIzaSyAe5mXr4aLXq4-IceqTKunX4i7AXnnMM9E",
@@ -12,10 +12,5 @@ const app = initializeApp({
     measurementId: "G-WWD6LYQD3T",
 });
 
-const auth = getAuth(app);
-
-const db = getFirestore(app);
-const users = collection(db, "users");
-const projects = collection(db, "projects");
-
-export { auth, users, projects };
+export const auth = getAuth(app);
+export const db = getFirestore(app);
