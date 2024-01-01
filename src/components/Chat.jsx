@@ -2,9 +2,9 @@ import Messages from "./Messages";
 import Members from "./Members";
 import { useState } from "react";
 
-export default function Chat() {
+export default function Chat({ data }) {
   const [radioToggle, setRadioToggle] = useState("Members");
-
+  
   return (
     <div className="bg-stone-100 h-[calc(100vh-4rem)] xl:w-1/4 overflow-y-auto no-scrollbar">
       <div className="flex bg-indigo-100 w-11/12 max-w-[250px] my-2 p-1 w-56 rounded-full place-content-around sticky top-2 mx-auto">
@@ -61,7 +61,7 @@ export default function Chat() {
       </div>
 
       <div id="messageInput">
-        {radioToggle === "Messages" ? <Messages /> : <Members />}
+        {radioToggle === "Messages" ? <Messages /> : <Members members={ data.members }/>}
       </div>
     </div>
   );
